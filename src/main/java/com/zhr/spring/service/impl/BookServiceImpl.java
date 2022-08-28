@@ -5,6 +5,8 @@ import com.zhr.spring.service.BookService;
 import org.springframework.stereotype.Service;
 
 import com.zhr.spring.dao.BookDao;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.TimeUnit;
@@ -32,7 +34,10 @@ public class BookServiceImpl implements BookService {
             //默认遇到异常就回滚
             //noRollbackFor = ArithmeticException.class
             //noRollbackForClassName = "java.lang.ArithmeticException"
+            //isolation = Isolation.DEFAULT  // 可重读读
+            propagation = Propagation.REQUIRES_NEW  // 事务的传播行为（使用被调用者的事务）
     )
+
     public void buyBook(Integer userid, Integer bookId) {
 //        try {
 //            TimeUnit.SECONDS.sleep(5);
@@ -44,7 +49,7 @@ public class BookServiceImpl implements BookService {
         // 更新图书的库存
         bookDao.updateStock(bookId);
         // 更新用户的余额
-        bookDao.updateBalance(userid,price);
-        System.out.println(1/0);
+        bookDao.updateBalance(userid, price);
+//        System.out.println(1/0);
     }
 }

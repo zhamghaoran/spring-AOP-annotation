@@ -15,6 +15,8 @@ public class TxByAnnotationTset {
     private BookController bookController;
     @Test
     public void testByBook() {
-        bookController.buyBook(1,1);
+        //bookController.buyBook(1,1);
+        bookController.checkout(1,new Integer[]{1,2});
     }
+
 }
