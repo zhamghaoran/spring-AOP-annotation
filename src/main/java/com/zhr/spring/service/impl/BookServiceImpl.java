@@ -28,15 +28,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional(
-            //readOnly = true // 设置事务为只读
-            //timeout = 3 设置时间，超过时间强制回滚
-            //默认遇到异常就回滚
-            //noRollbackFor = ArithmeticException.class
-            //noRollbackForClassName = "java.lang.ArithmeticException"
-            //isolation = Isolation.DEFAULT  // 可重读读
-            propagation = Propagation.REQUIRES_NEW  // 事务的传播行为（使用被调用者的事务）
-    )
+//    @Transactional(
+//            //readOnly = true // 设置事务为只读
+//            //timeout = 3 设置时间，超过时间强制回滚
+//            //默认遇到异常就回滚
+//            //noRollbackFor = ArithmeticException.class
+//            //noRollbackForClassName = "java.lang.ArithmeticException"
+//            //isolation = Isolation.DEFAULT  // 可重读读
+//            propagation = Propagation.REQUIRES_NEW  // 事务的传播行为（使用被调用者的事务）
+//    )
 
     public void buyBook(Integer userid, Integer bookId) {
 //        try {

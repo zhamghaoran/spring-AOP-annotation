@@ -13,7 +13,7 @@ public class CheckOutServiceImpl implements CheckOutService {
     @Autowired
     private BookService bookService;
     @Override
-    @Transactional
+//    @Transactional
     public void check(Integer userid, Integer[] bookids) {
         for (Integer bookid : bookids) {
             bookService.buyBook(userid,bookid);
