@@ -1,4 +1,4 @@
-package java.com.zhr.spring.service;
+package com.zhr.spring.service;
 
 public interface BookService {
 

@@ -1,4 +1,4 @@
-package java.com.zhr.spring.dao;
+package com.zhr.spring.dao;
 
 public interface BookDao {
     Integer getPriceByBookId(Integer bookId);

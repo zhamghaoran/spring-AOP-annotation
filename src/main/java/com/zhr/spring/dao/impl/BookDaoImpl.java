@@ -1,10 +1,10 @@
-package java.com.zhr.spring.dao.impl;
+package com.zhr.spring.dao.impl;
 
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.com.zhr.spring.dao.BookDao;
+import com.zhr.spring.dao.BookDao;
 
 @Repository
 public class BookDaoImpl implements BookDao {

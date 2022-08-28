@@ -1,4 +1,4 @@
-package java.com.zhr.spring.pojo;
+package com.zhr.spring.pojo;
 
 public class User {
     private Integer id;
